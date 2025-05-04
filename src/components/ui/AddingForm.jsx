@@ -46,7 +46,7 @@ const AddingForm = ({ onClose, authors, setBlogs }) => {
     };
 
     setBlogs((prev) => [newBlogPost, ...prev]);
-    handleCleanForm();
+    handleClose();
   };
 
   return (
@@ -95,6 +95,7 @@ const AddingForm = ({ onClose, authors, setBlogs }) => {
             name="image"
             value={formData.image}
             onChange={handleChange}
+            required
           />
         </label>
 
@@ -122,6 +123,7 @@ const AddingForm = ({ onClose, authors, setBlogs }) => {
             name="avatar"
             value={formData.avatar}
             onChange={handleChange}
+            required
           />
         </label>
 
