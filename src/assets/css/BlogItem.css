@@ -8,6 +8,7 @@
   overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: transform 0.3s ease;
+  user-select: none;
 }
 
 .post-card:hover {
