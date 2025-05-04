@@ -1,0 +1,59 @@
+.add-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.add-icon {
+  width: 30px;
+  height: 30px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.add-button:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.add-button:hover .add-icon {
+  transform: rotate(90deg);
+}
+
+.add-button:hover .button-blur {
+  opacity: 1;
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .add-button {
+    width: 50px;
+    height: 50px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .add-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
