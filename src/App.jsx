@@ -4,15 +4,24 @@ import Header from "./components/header/Header";
 import blogDatas from "./assets/data/blogData";
 import Footer from "./components/footer/Footer";
 import AddButton from "./components/ui/AddButton";
+import AddingForm from "./components/ui/AddingForm";
 
 const App = () => {
   const [blogs, setBlogs] = useState(blogDatas);
+  const [showAddingForm, setShowAddingForm] = useState(false);
+  const authors = blogDatas.map((blog) => blog.author);
   return (
     <>
       <Header setBlogs={setBlogs} />
       <BlogList blogs={blogs} />
+      <AddButton onClick={() => setShowAddingForm(true)} />
+      {showAddingForm && (
+        <AddingForm
+          authors={authors}
+          onClose={() => setShowAddingForm(false)}
+        />
+      )}
       <Footer />
-      <AddButton />
     </>
   );
 };

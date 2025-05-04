@@ -1,0 +1,211 @@
+.adding-form {
+  max-width: 500px;
+  width: 95%;
+  background: rgb(246, 246, 246);
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: #f1f5f9;
+  font-family: "Segoe UI", sans-serif;
+  padding: 1.5rem;
+  transform-origin: bottom right;
+  opacity: 0;
+  animation: formSlideIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.adding-form.closing {
+  animation: formSlideOut 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.adding-form h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+  font-family: "Lilita One", sans-serif;
+  letter-spacing: 1px;
+}
+
+.adding-form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+}
+
+.adding-form input,
+.adding-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+  height: 2.5rem;
+}
+
+.adding-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.9rem;
+  height: 5rem;
+  resize: vertical;
+  min-height: 5rem;
+  max-height: 10rem;
+}
+
+.adding-form input:focus,
+.adding-form select:focus,
+.adding-form textarea:focus {
+  border-color: #000
+  outline: none;
+  box-shadow: 0 0 8px #111;
+}
+
+.adding-form button[type="submit"],button[type="button"] {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  background:  rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 2.5rem;
+}
+
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  opacity: 0;
+  animation: overlayFadeIn 0.5s ease forwards;
+}
+
+.form-overlay.closing {
+  animation: overlayFadeOut 0.5s ease forwards;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.close-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: #000;
+  transform: rotate(90deg);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .adding-form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .adding-form h2 {
+    font-size: 1.1rem;
+  }
+
+  .adding-form label {
+    font-size: 0.85rem;
+  }
+
+  .adding-form input,
+  .adding-form select,
+  .adding-form textarea {
+    font-size: 0.85rem;
+  }
+
+  .form-overlay {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .adding-form {
+    width: 90%;
+    padding: 1.25rem;
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes formSlideIn {
+  from {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes formSlideOut {
+  from {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0) rotate(10deg);
+    opacity: 0;
+  }
+}
