@@ -1,4 +1,4 @@
-export const blogDatas = [
+const blogDatas = [
   {
     id: 1,
     title: "How to learn React",
@@ -139,3 +139,5 @@ export const blogDatas = [
       "This article explores the new features introduced in ES6, including let and const, arrow functions, template literals, and more.",
   },
 ];
+
+export default blogDatas.sort((a, b) => new Date(b.date) - new Date(a.date));
