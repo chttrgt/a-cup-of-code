@@ -10,6 +10,7 @@ const App = () => {
   const [blogs, setBlogs] = useState(blogDatas);
   const [showAddingForm, setShowAddingForm] = useState(false);
   const authors = blogDatas.map((blog) => blog.author);
+  console.log("BLOGS: ", blogs);
   return (
     <>
       <Header setBlogs={setBlogs} />
@@ -19,6 +20,7 @@ const App = () => {
         <AddingForm
           authors={authors}
           onClose={() => setShowAddingForm(false)}
+          setBlogs={setBlogs}
         />
       )}
       <Footer />

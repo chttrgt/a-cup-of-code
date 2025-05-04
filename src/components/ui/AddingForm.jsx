@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CloseAddingFormImage from "../../assets/images/delete.png";
 import "../../assets/css/AddingForm.css";
 
-const AddingForm = ({ onClose, authors }) => {
+const AddingForm = ({ onClose, authors, setBlogs }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -39,8 +39,14 @@ const AddingForm = ({ onClose, authors }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    onClose();
+    const newBlogPost = {
+      ...formData,
+      id: Date.now(),
+      date: new Date(formData.date).toLocaleDateString("en-US"),
+    };
+
+    setBlogs((prev) => [newBlogPost, ...prev]);
+    handleCleanForm();
   };
 
   return (
@@ -122,7 +128,7 @@ const AddingForm = ({ onClose, authors }) => {
         <label>
           Date
           <input
-            type="datetime-local"
+            type="date"
             name="date"
             value={formData.date}
             onChange={handleChange}

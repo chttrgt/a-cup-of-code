@@ -15,7 +15,7 @@ const BlogItem = ({ title, description, image, author, avatar, date }) => {
           <div className="author-info">
             <p className="author-name">{author}</p>
             <p className="publish-date">
-              {new Date(date).toLocaleDateString()}
+              {new Date(date).toLocaleDateString("en-US")}
             </p>
           </div>
         </div>

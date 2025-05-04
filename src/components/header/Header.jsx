@@ -8,6 +8,8 @@ import "../../assets/css/Header.css";
 
 const Header = ({ setBlogs }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [sortByDateASC, setSortByDateASC] = useState(false);
+  const [sortByAuthorASC, setSortByAuthorASC] = useState(false);
   const handleSearch = (e) => {
     const searchPost = e.target.value.toLowerCase();
     if (searchPost === "") {
@@ -25,17 +27,33 @@ const Header = ({ setBlogs }) => {
   };
 
   const handleSortByDate = () => {
-    setBlogs((prev) =>
-      [...prev].sort((a, b) => new Date(a.date) - new Date(b.date))
-    );
+    if (sortByDateASC) {
+      setBlogs((prev) =>
+        [...prev].sort((a, b) => new Date(b.date) - new Date(a.date))
+      );
+      setSortByDateASC(false);
+    } else {
+      setBlogs((prev) =>
+        [...prev].sort((a, b) => new Date(a.date) - new Date(b.date))
+      );
+      setSortByDateASC(true);
+    }
     setShowMenu(false);
   };
 
   const handleSortByAuthor = () => {
-    setBlogs((prev) =>
-      [...prev].sort((a, b) => a.author.localeCompare(b.author))
-    );
-    setShowMenu(false);
+    if (sortByAuthorASC) {
+      setBlogs((prev) =>
+        [...prev].sort((a, b) => a.author.localeCompare(b.author))
+      );
+      setSortByAuthorASC(false);
+    } else {
+      setBlogs((prev) =>
+        [...prev].sort((b, a) => a.author.localeCompare(b.author))
+      );
+      setSortByAuthorASC(true);
+      setShowMenu(true);
+    }
   };
 
   return (
@@ -70,7 +88,7 @@ const Header = ({ setBlogs }) => {
             alt="sort-up-date-image"
             className="sortUp-date-image"
           />
-          By Date
+          By Date {sortByDateASC ? "↑" : "↓"}
         </button>
         <button className="btn-sort" onClick={handleSortByAuthor}>
           <img
@@ -78,7 +96,7 @@ const Header = ({ setBlogs }) => {
             alt="sort-up-author-image"
             className="sortUp-author-image"
           />
-          By Author
+          By Author {!sortByAuthorASC ? "↑" : "↓"}
         </button>
       </div>
     </header>

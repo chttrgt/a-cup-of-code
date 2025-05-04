@@ -9,7 +9,11 @@ const BlogList = ({ blogs }) => {
         <BlogItem
           key={blog.id}
           title={blog.title}
-          description={blog.description.substring(0, 30).concat("...")}
+          description={
+            blog?.description?.length > 30
+              ? blog.description.substring(0, 30).concat("...")
+              : blog.description
+          }
           image={blog.image}
           author={blog.author}
           avatar={blog.avatar}
