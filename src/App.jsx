@@ -1,10 +1,11 @@
 import React from "react";
+import BlogList from "./components/bloglist/BlogList";
 
 const App = () => {
   return (
-    <div>
-      <h1>Let's start Coding :)</h1>
-    </div>
+    <>
+      <BlogList />
+    </>
   );
 };
 

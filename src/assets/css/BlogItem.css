@@ -1,0 +1,84 @@
+.post-card {
+  width: 280px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.post-image {
+  position: relative;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.post-title {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  margin: 0;
+  color: #333333;
+  font-size: 1.2rem;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+.post-content {
+  padding: 14px;
+}
+
+.post-description {
+  color: #555555;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eeeeee;
+  padding-top: 10px;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid #dddddd;
+}
+
+.author-info {
+  color: #777777;
+  font-size: 0.8rem;
+}
+
+.author-name {
+  margin: 0;
+  font-weight: 600;
+  color: #333333;
+}
+
+.publish-date {
+  margin: 2px 0 0;
+}
