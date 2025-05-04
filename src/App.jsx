@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BlogList from "./components/bloglist/BlogList";
 import Header from "./components/header/Header";
 import blogDatas from "./assets/data/blogData";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   const [blogs, setBlogs] = useState(blogDatas);
@@ -9,6 +10,7 @@ const App = () => {
     <>
       <Header setBlogs={setBlogs} />
       <BlogList blogs={blogs} />
+      <Footer />
     </>
   );
 };
