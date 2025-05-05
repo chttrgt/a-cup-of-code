@@ -1,7 +1,7 @@
 import React from "react";
 import BlogItem from "./BlogItem";
 import "../../assets/css/BlogList.css";
-import { useCihatBlog } from "../../context/BlogContext";
+import { useCihatBlog } from "../../context/blog-context/BlogContext";
 
 const BlogList = () => {
   const { blogs } = useCihatBlog();

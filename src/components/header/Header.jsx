@@ -6,7 +6,8 @@ import SortUpAuthor from "../../assets/images/verified-profile.png";
 import blogDatas from "../../assets/data/blogData";
 import "../../assets/css/Header.css";
 import { Link, useLocation } from "react-router-dom";
-import { useCihatBlog } from "../../context/BlogContext";
+import { useCihatBlog } from "../../context/blog-context/BlogContext";
+
 
 const Header = () => {
   const location = useLocation();

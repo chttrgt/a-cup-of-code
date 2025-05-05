@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { BlogContext } from "./BlogContext";
-import blogDatas from "../assets/data/blogData";
+import { BlogContext } from "./FormContext";
+import blogDatas from "../../assets/data/blogData";
 
 const BlogProvider = ({ children }) => {
   const [blogs, setBlogs] = useState(blogDatas);

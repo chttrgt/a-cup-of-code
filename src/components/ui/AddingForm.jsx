@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CloseAddingFormImage from "../../assets/images/delete.png";
 import "../../assets/css/AddingForm.css";
-import { useCihatBlog } from "../../context/BlogContext";
+import { useCihatBlog } from "../../context/blog-context/BlogContext";
 
 const AddingForm = ({ onClose }) => {
   const { blogs, setBlogs } = useCihatBlog();

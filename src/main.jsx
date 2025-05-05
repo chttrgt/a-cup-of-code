@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import BlogProvider from "./context/BlogProvider";
+import BlogProvider from "./context/blog-context/BlogProvider";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import DeletePostImage from "../../assets/images/bin.png";
 import "../../assets/css/BlogItem.css";
-import { useCihatBlog } from "../../context/BlogContext";
+import { useCihatBlog } from "../../context/blog-context/BlogContext";
 
 const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
   const { setBlogs } = useCihatBlog();
