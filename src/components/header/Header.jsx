@@ -6,9 +6,11 @@ import SortUpAuthor from "../../assets/images/verified-profile.png";
 import blogDatas from "../../assets/data/blogData";
 import "../../assets/css/Header.css";
 import { Link, useLocation } from "react-router-dom";
+import { useCihatBlog } from "../../context/BlogContext";
 
-const Header = ({ setBlogs }) => {
+const Header = () => {
   const location = useLocation();
+  const { setBlogs } = useCihatBlog();
   const [showMenu, setShowMenu] = useState(false);
   const [sortByDateASC, setSortByDateASC] = useState(false);
   const [sortByAuthorASC, setSortByAuthorASC] = useState(false);
