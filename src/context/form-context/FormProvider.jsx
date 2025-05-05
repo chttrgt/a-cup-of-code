@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { BlogContext } from "./FormContext";
-import blogDatas from "../../assets/data/blogData";
+import { FormContext } from "./FormContext";
 
-const BlogProvider = ({ children }) => {
-  const [blogs, setBlogs] = useState(blogDatas);
+const FormProvider = ({ children }) => {
+  const [showActionForm, setShowActionForm] = useState(false);
   const data = {
-    blogs,
-    setBlogs,
+    showActionForm,
+    setShowActionForm,
   };
 
-  return <BlogContext.Provider value={data}>{children}</BlogContext.Provider>;
+  return <FormContext.Provider value={data}>{children}</FormContext.Provider>;
 };
 
-export default BlogProvider;
+export default FormProvider;

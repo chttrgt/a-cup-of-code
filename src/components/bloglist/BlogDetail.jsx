@@ -1,18 +1,26 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import blogDatas from "../../assets/data/blogData";
 import "../../assets/css/BlogDetail.css";
 import { TiArrowBack } from "react-icons/ti";
 import { MdModeEditOutline } from "react-icons/md";
+import { useCihatForm } from "../../context/form-context/FormContext";
+import { useCihatBlog } from "../../context/blog-context/BlogContext";
 
-const BlogDetail = () => {
+const BlogDetail = ({ onEditBlog }) => {
+  const { setShowActionForm } = useCihatForm();
+  const { blogs } = useCihatBlog();
   const { bid } = useParams();
   const navigate = useNavigate();
-  const blog = blogDatas.find((blog) => blog.id === +bid);
+  const blog = blogs.find((blog) => blog.id === +bid);
 
   if (!blog) {
     return <div className="blog-not-found">Blog post not found!</div>;
   }
+
+  const handleEdit = () => {
+    onEditBlog(blog);
+    setShowActionForm(true);
+  };
 
   return (
     <div className="blog-detail-container">
@@ -33,7 +41,11 @@ const BlogDetail = () => {
             title="Go Back"
             onClick={() => navigate(-1)}
           />
-          <MdModeEditOutline className="bp-update-icon" title="Edit" />
+          <MdModeEditOutline
+            className="bp-update-icon"
+            title="Edit"
+            onClick={handleEdit}
+          />
         </div>
       </div>
       <div className="blog-detail-content">

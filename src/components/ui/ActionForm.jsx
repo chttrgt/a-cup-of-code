@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CloseAddingFormImage from "../../assets/images/delete.png";
 import "../../assets/css/AddingForm.css";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
 
-const AddingForm = ({ onClose }) => {
-  const { blogs, setBlogs } = useCihatBlog();
+const ActionForm = ({ onClose, editMode = false, initialData = null }) => {
+  const { blogs, setBlogs, updateBlog } = useCihatBlog();
   const [isClosing, setIsClosing] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -41,15 +41,33 @@ const AddingForm = ({ onClose }) => {
     });
   };
 
+  useEffect(() => {
+    if (editMode && initialData) {
+      setFormData({
+        ...initialData,
+        date: new Date(initialData?.date).toISOString().split("T")[0],
+      });
+    }
+  }, [editMode, initialData]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newBlogPost = {
-      ...formData,
-      id: blogs.length + 1,
-      date: new Date(formData.date).toLocaleDateString("en-US"),
-    };
+    if (editMode) {
+      const updatedBlog = {
+        ...formData,
+        id: initialData.id,
+        date: new Date(formData.date).toLocaleDateString("en-US"),
+      };
+      updateBlog(updatedBlog);
+    } else {
+      const newBlogPost = {
+        ...formData,
+        id: blogs.length + 1,
+        date: new Date(formData.date).toLocaleDateString("en-US"),
+      };
 
-    setBlogs((prev) => [newBlogPost, ...prev]);
+      setBlogs((prev) => [newBlogPost, ...prev]);
+    }
     handleClose();
   };
 
@@ -60,7 +78,7 @@ const AddingForm = ({ onClose }) => {
         onSubmit={handleSubmit}
       >
         <div className="form-header">
-          <h2>Add New Blog Post</h2>
+          <h2>{editMode ? "Edit Blog Post" : "Add New Blog Post"}</h2>
           <div className="close-button" onClick={handleClose}>
             <img
               width={10}
@@ -156,11 +174,13 @@ const AddingForm = ({ onClose }) => {
           <button type="button" onClick={handleCleanForm}>
             Clean Form
           </button>
-          <button type="submit">Add New Post</button>
+          <button type="submit">
+            {editMode ? "Update Post" : "Add New Post"}
+          </button>
         </div>
       </form>
     </div>
   );
 };
 
-export default AddingForm;
+export default ActionForm;

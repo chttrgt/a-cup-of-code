@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import BlogList from "../components/bloglist/BlogList";
-import AddingForm from "../components/ui/AddingForm";
+import AddingForm from "../components/ui/ActionForm";
 import AddButton from "../components/ui/AddButton";
+import { useCihatForm } from "../context/form-context/FormContext";
 
 const HomePage = () => {
-  const [showAddingForm, setShowAddingForm] = useState(false);
+  const { showActionForm, setShowActionForm } = useCihatForm();
 
   return (
     <>
       <BlogList />
-      <AddButton onClick={() => setShowAddingForm(true)} />
-      {showAddingForm && (
-        <AddingForm onClose={() => setShowAddingForm(false)} />
+      <AddButton onClick={() => setShowActionForm(true)} />
+      {showActionForm && (
+        <AddingForm onClose={() => setShowActionForm(false)} />
       )}
     </>
   );
