@@ -5,8 +5,10 @@ import SortUpDate from "../../assets/images/timetable.png";
 import SortUpAuthor from "../../assets/images/verified-profile.png";
 import blogDatas from "../../assets/data/blogData";
 import "../../assets/css/Header.css";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ setBlogs }) => {
+  const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [sortByDateASC, setSortByDateASC] = useState(false);
   const [sortByAuthorASC, setSortByAuthorASC] = useState(false);
@@ -57,27 +59,31 @@ const Header = ({ setBlogs }) => {
   return (
     <header className="glass-header">
       <div className="coffe-logo">
-        <img
-          src={coffeLogo}
-          alt="coffe-logo-image"
-          className="coffe-logo-image"
-        />
-        <p className="coffe-logo-text">A Cup Of Code</p>
+        <Link to="/" className="coffe-logo-link">
+          <img
+            src={coffeLogo}
+            alt="coffe-logo-image"
+            className="coffe-logo-image"
+          />
+          <p className="coffe-logo-text">A Cup Of Code</p>
+        </Link>
       </div>
-      <div className="search-container">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search..."
-          onChange={handleSearch}
-        />
-        <img
-          src={SortUpLogo}
-          alt="coffe-logo-image"
-          className="sortUp-logo-image"
-          onClick={handleShowSortUpMenu}
-        />
-      </div>
+      {!location.pathname.includes("blog") && (
+        <div className="search-container">
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search..."
+            onChange={handleSearch}
+          />
+          <img
+            src={SortUpLogo}
+            alt="coffe-logo-image"
+            className="sortUp-logo-image"
+            onClick={handleShowSortUpMenu}
+          />
+        </div>
+      )}
 
       <div className={`sortUp-menu ${showMenu ? "active" : ""}`}>
         <button className="btn-sort" onClick={handleSortByDate}>

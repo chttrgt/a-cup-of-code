@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CloseAddingFormImage from "../../assets/images/delete.png";
 import "../../assets/css/AddingForm.css";
 
-const AddingForm = ({ onClose, authors, setBlogs }) => {
+const AddingForm = ({ onClose, authors, blogs, setBlogs }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -41,7 +41,7 @@ const AddingForm = ({ onClose, authors, setBlogs }) => {
     e.preventDefault();
     const newBlogPost = {
       ...formData,
-      id: Date.now(),
+      id: blogs.length + 1,
       date: new Date(formData.date).toLocaleDateString("en-US"),
     };
 

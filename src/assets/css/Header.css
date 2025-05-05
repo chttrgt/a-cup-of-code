@@ -31,6 +31,13 @@
   cursor: pointer;
 }
 
+.coffe-logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .sortUp-logo-image {
   width: 45px;
   height: 45px;

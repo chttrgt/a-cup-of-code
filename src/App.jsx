@@ -1,30 +1,22 @@
-import React, { useState } from "react";
-import BlogList from "./components/bloglist/BlogList";
-import Header from "./components/header/Header";
-import blogDatas from "./assets/data/blogData";
-import Footer from "./components/footer/Footer";
-import AddButton from "./components/ui/AddButton";
-import AddingForm from "./components/ui/AddingForm";
+import React from "react";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import BlogDetailPage from "./pages/BlogDetailPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import MainLayout from "./layout/MainLayout";
+import RootLayout from "./layout/RootLayout";
 
 const App = () => {
-  const [blogs, setBlogs] = useState(blogDatas);
-  const [showAddingForm, setShowAddingForm] = useState(false);
-  const authors = blogDatas.map((blog) => blog.author);
-  console.log("BLOGS: ", blogs);
   return (
-    <>
-      <Header setBlogs={setBlogs} />
-      <BlogList blogs={blogs} />
-      <AddButton onClick={() => setShowAddingForm(true)} />
-      {showAddingForm && (
-        <AddingForm
-          authors={authors}
-          onClose={() => setShowAddingForm(false)}
-          setBlogs={setBlogs}
-        />
-      )}
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<RootLayout />}>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog/:bid" element={<BlogDetailPage />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 };
 

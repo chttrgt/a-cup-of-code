@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../assets/css/BlogItem.css";
 
-const BlogItem = ({ title, description, image, author, avatar, date }) => {
+const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/blog/${bid}`);
+  };
   return (
-    <div className="post-card">
+    <div className="post-card" onClick={handleClick}>
       <div className="post-image" style={{ backgroundImage: `url(${image})` }}>
         <div className="overlay"></div>
         <h2 className="post-title">{title}</h2>

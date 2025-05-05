@@ -13,8 +13,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.5px;
-  position: relative;
-  bottom: 0;
+  box-sizing: border-box;
 }
 
 .glass-footer p {

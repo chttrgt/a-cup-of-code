@@ -8,6 +8,7 @@ const BlogList = ({ blogs }) => {
       {blogs.map((blog) => (
         <BlogItem
           key={blog.id}
+          bid={blog.id}
           title={blog.title}
           description={
             blog?.description?.length > 30

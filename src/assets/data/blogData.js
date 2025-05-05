@@ -136,7 +136,7 @@ const blogDatas = [
       "https://www.shutterstock.com/image-vector/vector-bright-portrait-beautiful-brunette-600nw-2452267975.jpg",
     date: "2023-10-10",
     content:
-      "This article explores the new features introduced in ES6, including let and const, arrow functions, template literals, and more.",
+      "This article explores the new features introduced in ES6, including let and const, arrow functions, template literals, and more. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, aut sint nobis ipsam non ducimus at! Et molestiae assumenda aliquam unde corrupti earum minus quasi nemo sunt, ipsam non quidem deleniti, fugit optio beatae dolor labore ducimus dolore accusamus? Maxime blanditiis alias debitis, minima esse laborum cumque quod, corporis optio ducimus et similique odio inventore. Magni provident ullam repellat sequi dolor fuga accusamus, perspiciatis assumenda atque optio sit doloremque reprehenderit. Dolores impedit soluta quaerat beatae labore. Repudiandae explicabo expedita voluptatibus. Sint quam itaque quis unde, laudantium quo reiciendis hic dicta placeat est nemo possimus iure magnam porro nihil cupiditate vel?",
   },
 ];
 

@@ -4,15 +4,36 @@
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  background-image: url("bgcover.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 body:has(.form-overlay) {
   overflow: hidden;
+}
+
+.root-layout {
+  font-family: "Poppins", sans-serif;
+  background-image: url("bgcover.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout > header {
+  flex-shrink: 0;
+  height: 60px;
+}
+
+.main-layout > footer {
+  flex-shrink: 0;
+  height: 60px;
+}
+
+.main-layout > .content {
+  flex-grow: 1;
+  overflow-y: auto;
 }
