@@ -38,7 +38,6 @@ const Header = ({ setBlogs }) => {
       );
       setSortByDateASC(true);
     }
-    setShowMenu(false);
   };
 
   const handleSortByAuthor = () => {
@@ -52,7 +51,6 @@ const Header = ({ setBlogs }) => {
         [...prev].sort((b, a) => a.author.localeCompare(b.author))
       );
       setSortByAuthorASC(true);
-      setShowMenu(true);
     }
   };
 
