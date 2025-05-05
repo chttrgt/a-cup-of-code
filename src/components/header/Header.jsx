@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import coffeLogo from "../../assets/images/coffe.png";
 import SortUpLogo from "../../assets/images/sort-up.png";
 import SortUpDate from "../../assets/images/timetable.png";
+import BackToHome from "../../assets/images/left.png";
 import SortUpAuthor from "../../assets/images/verified-profile.png";
 import blogDatas from "../../assets/data/blogData";
 import "../../assets/css/Header.css";
@@ -70,7 +71,7 @@ const Header = () => {
           <p className="coffe-logo-text">A Cup Of Code</p>
         </Link>
       </div>
-      {!location.pathname.includes("blog") && (
+      {(!location.pathname.includes("blog") && (
         <div className="search-container">
           <input
             className="search-input"
@@ -84,6 +85,17 @@ const Header = () => {
             className="sortUp-logo-image"
             onClick={handleShowSortUpMenu}
           />
+        </div>
+      )) || (
+        <div className="back-logo">
+          <Link to="/" className="back-logo-link">
+            <img
+              src={BackToHome}
+              alt="back-logo-image"
+              className="back-logo-image"
+            />
+            <p className="back-logo-text">Back</p>
+          </Link>
         </div>
       )}
 
