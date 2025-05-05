@@ -61,6 +61,16 @@
   padding-top: 10px;
 }
 
+.delete-post{
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.delete-post:hover img{
+  scale: 1.2;
+  transition: scale 0.2s ease-in-out;
+}
+
 .author-avatar {
   width: 36px;
   height: 36px;

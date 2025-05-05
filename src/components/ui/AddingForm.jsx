@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import CloseAddingFormImage from "../../assets/images/delete.png";
 import "../../assets/css/AddingForm.css";
+import { useCihatBlog } from "../../context/BlogContext";
 
-const AddingForm = ({ onClose, authors, blogs, setBlogs }) => {
+const AddingForm = ({ onClose }) => {
+  const { blogs, setBlogs } = useCihatBlog();
   const [isClosing, setIsClosing] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -13,6 +15,8 @@ const AddingForm = ({ onClose, authors, blogs, setBlogs }) => {
     date: "",
     content: "",
   });
+
+  const authors = blogs.map((blog) => blog.author);
 
   const handleClose = () => {
     setIsClosing(true);
