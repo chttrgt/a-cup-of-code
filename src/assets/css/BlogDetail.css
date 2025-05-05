@@ -3,13 +3,15 @@
   margin: 0 auto;
   padding: 2rem;
   color: #111827;
-  background: linear-gradient(to bottom, #ffffff, #f9fafb);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(to bottom, #fff, #f9fafb);
+  /* background: crimson; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  position: relative;
 }
 
 .blog-detail-header {
   margin-bottom: 2.5rem;
-  position: relative;
 }
 
 .blog-detail-header h1 {
@@ -166,6 +168,61 @@
   background-color: transparent;
   color: inherit;
   padding: 0;
+}
+
+.blog-post-update {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 50px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.blog-post-update:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateX(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bp-update-icon {
+  width: 27px;
+  height: 27px;
+  color: rgba(255, 255, 255, 0.91);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  opacity: 0.3;
+  transition: all 0.5s ease;
+}
+
+.bp-update-icon:hover {
+  opacity: 1;
+}
+
+.bp-update-back-icon {
+  width: 35px;
+  height: 35px;
+  color: rgba(255, 255, 255, 0.91);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  opacity: 0.3;
+  transition: all 0.5s ease;
+}
+
+.bp-update-back-icon:hover {
+  opacity: 1;
 }
 
 @keyframes gradientShift {

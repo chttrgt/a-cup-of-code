@@ -1,10 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import blogDatas from "../../assets/data/blogData";
 import "../../assets/css/BlogDetail.css";
+import { TiArrowBack } from "react-icons/ti";
+import { MdModeEditOutline } from "react-icons/md";
 
 const BlogDetail = () => {
   const { bid } = useParams();
+  const navigate = useNavigate();
   const blog = blogDatas.find((blog) => blog.id === +bid);
 
   if (!blog) {
@@ -23,6 +26,14 @@ const BlogDetail = () => {
               {new Date(blog.date).toLocaleDateString("en-US")}
             </p>
           </div>
+        </div>
+        <div className="blog-post-update">
+          <TiArrowBack
+            className="bp-update-back-icon"
+            title="Go Back"
+            onClick={() => navigate(-1)}
+          />
+          <MdModeEditOutline className="bp-update-icon" title="Edit" />
         </div>
       </div>
       <div className="blog-detail-content">
