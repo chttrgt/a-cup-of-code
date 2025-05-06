@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "../../assets/css/BlogDetail.css";
-import { TiArrowBack } from "react-icons/ti";
-import { MdModeEditOutline } from "react-icons/md";
 import { useCihatForm } from "../../context/form-context/FormContext";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
+import { TiArrowBack } from "react-icons/ti";
+import { MdModeEditOutline } from "react-icons/md";
+import "./BlogDetail.css";
 
 const BlogDetail = ({ onEditBlog }) => {
   const { setShowActionForm } = useCihatForm();
@@ -48,6 +48,7 @@ const BlogDetail = ({ onEditBlog }) => {
           />
         </div>
       </div>
+
       <div className="blog-detail-content">
         <img src={blog.image} alt={blog.title} className="blog-detail-image" />
         <p className="blog-description">{blog.description}</p>

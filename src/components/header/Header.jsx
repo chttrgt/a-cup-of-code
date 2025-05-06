@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
-import SearchInput from "../ui/SearchInput";
-import SortMenu from "../ui/SortMenu";
+import SearchInput from "../ui/inputs/SearchInput";
+import SortMenu from "../ui/menus/SortMenu";
 import blogDatas from "../../assets/data/blogData";
 import coffeLogo from "../../assets/images/coffe.png";
 import { FaSort } from "react-icons/fa";
-import "../../assets/css/Header.css";
+import "./Header.css";
 
 const Header = () => {
   const location = useLocation();
@@ -52,7 +52,7 @@ const Header = () => {
           />
         </div>
       )}
-      <SortMenu showMenu={showMenu} />
+      <SortMenu showMenu={showMenu} onClose={handleShowSortMenu} />
     </header>
   );
 };

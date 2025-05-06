@@ -1,10 +1,11 @@
 import React from "react";
 import BlogItem from "./BlogItem";
-import "../../assets/css/BlogList.css";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
+import "./BlogList.css";
 
 const BlogList = () => {
   const { blogs } = useCihatBlog();
+
   return (
     <div className="blog-list">
       {blogs.map((blog) => (

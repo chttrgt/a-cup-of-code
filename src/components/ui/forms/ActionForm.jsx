@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import CloseAddingFormImage from "../../assets/images/delete.png";
-import "../../assets/css/AddingForm.css";
-import { useCihatBlog } from "../../context/blog-context/BlogContext";
+import CloseAddingFormImage from "../../../assets/images/delete.png";
+import "./ActionForm.css";
+import { useCihatBlog } from "../../../context/blog-context/BlogContext";
 
 const ActionForm = ({ onClose, editMode = false, initialData = null }) => {
   const { blogs, setBlogs, updateBlog } = useCihatBlog();

@@ -14,9 +14,9 @@
   font-size: 0.75rem;
   letter-spacing: 0.5px;
   box-sizing: border-box;
-}
 
-.glass-footer p {
-  margin: 0;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.05);
+  p {
+    margin: 0;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.05);
+  }
 }

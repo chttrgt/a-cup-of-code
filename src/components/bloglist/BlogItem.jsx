@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import DeletePostImage from "../../assets/images/bin.png";
-import "../../assets/css/BlogItem.css";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
+import DeletePostImage from "../../assets/images/bin.png";
+import "./BlogItem.css";
 
 const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
   const { setBlogs } = useCihatBlog();
   const navigate = useNavigate();
+
   const handleClick = () => {
     navigate(`/blog/${bid}`);
   };
@@ -43,7 +44,6 @@ const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
               alt="Delete Post"
               width={20}
               height={20}
-              className="delete-post-image"
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import AddNewPost from "../../assets/images/add.png";
-import "../../assets/css/AddButton.css";
+import AddNewPost from "../../../assets/images/add.png";
+import "./AddButton.css";
 
 const AddButton = ({ onClick }) => {
   return (

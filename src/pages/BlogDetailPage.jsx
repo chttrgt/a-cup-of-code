@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BlogDetail from "../components/bloglist/BlogDetail";
 import { useCihatForm } from "../context/form-context/FormContext";
-import EditForm from "../components/ui/ActionForm";
+import BlogDetail from "../components/bloglist/BlogDetail";
+import EditForm from "../components/ui/forms/ActionForm";
 
 const BlogDetailPage = () => {
   const { showActionForm, setShowActionForm } = useCihatForm();

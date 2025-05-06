@@ -1,7 +1,7 @@
 import React from "react";
 import BlogList from "../components/bloglist/BlogList";
-import AddingForm from "../components/ui/ActionForm";
-import AddButton from "../components/ui/AddButton";
+import AddButton from "../components/ui/buttons/AddButton";
+import ActionForm from "../components/ui/forms/ActionForm";
 import { useCihatForm } from "../context/form-context/FormContext";
 
 const HomePage = () => {
@@ -12,7 +12,7 @@ const HomePage = () => {
       <BlogList />
       <AddButton onClick={() => setShowActionForm(true)} />
       {showActionForm && (
-        <AddingForm onClose={() => setShowActionForm(false)} />
+        <ActionForm onClose={() => setShowActionForm(false)} />
       )}
     </>
   );
