@@ -1,0 +1,40 @@
+.sort {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  span {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.btn-sort {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.66);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 500;
+  gap: 0.8rem;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(5px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
