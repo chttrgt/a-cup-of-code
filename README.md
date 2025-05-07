@@ -32,7 +32,7 @@ A Cup Of Code, basit ama şık bir blog uygulamasıdır. Kullanıcılar yeni pos
 ### Yeni Post Ekleme
 ![Yeni Post](./screenshots/addingnewpost.png)
 
-### Blog Detay Sayfa
+### Blog Detay Sayfası
 ![Blog Detay Sayfa](./screenshots/blogdetailpage.png)
 
 ### Post Güncelleme
