@@ -1,12 +1,39 @@
-# React + Vite
+# ☕ A Cup Of Coffe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Cup Of Coffe, basit ama şık bir blog uygulamasıdır. Kullanıcılar yeni postlar ekleyebilir, mevcut postları silebilir veya güncelleyebilir. Uygulama, React ile geliştirilmiş olup global state yönetimi için Context API kullanılmıştır. Tasarımı ise normal CSS ile responsive şekilde hazırlanmıştır.
 
-Currently, two official plugins are available:
+## 🚀 Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Post ekleme ✍️  
+- Post güncelleme 📝  
+- Post silme 🗑️  
+- Context API ile global state yönetimi  
+- Responsive ve sade kullanıcı arayüzü  
+- Vanilla CSS ile tasarım
 
-## Expanding the ESLint configuration
+## 🛠️ Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Context API
+- CSS (Vanilla)
+- Responsive Design
+
+## 📸 Ekran Görüntüleri
+
+### Ana Sayfa
+![Ana Sayfa](./screenshots/bloghomepage.png)
+
+### Arama İşlemi
+![Arama İşlemi](./screenshots/blogsearching.png)
+
+### Sıralama İşlemi
+![Sıralama İşlemi](./screenshots/blogsorting.png)
+
+### Yeni Post Ekleme
+![Yeni Post](./screenshots/addingnewpost.png)
+
+### Blog Detay Sayfa
+![Blog Detay Sayfa](./screenshots/blogdetailpage.png)
+
+### Post Güncelleme
+![Post Güncelleme](./screenshots/editcurrentpost.png)
