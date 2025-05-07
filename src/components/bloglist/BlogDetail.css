@@ -200,6 +200,12 @@
   .blog-post-update {
     right: 0;
   }
+
+  .blog-detail-content {
+    .blog-detail-image {
+      height: auto;
+    }
+  }
 }
 
 @media (max-width: 480px) {
