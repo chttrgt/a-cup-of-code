@@ -1,5 +1,6 @@
 .blog-detail-container {
   max-width: 800px;
+  min-height: calc(100vh - 120px);
   margin: 0 auto;
   padding: 2rem;
   color: #111827;
