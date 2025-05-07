@@ -10,7 +10,7 @@ body:has(.form-overlay) {
 
 .root-layout {
   font-family: "Poppins", sans-serif;
-  background-image: url("bgcover.jpg");
+  background-image: url("/bgcover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
