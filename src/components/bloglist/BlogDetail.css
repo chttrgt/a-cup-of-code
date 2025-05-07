@@ -120,12 +120,15 @@
 
 .blog-detail-content {
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   .blog-detail-image {
     width: 100%;
-    height: auto;
+    height: 370px;
     border-radius: 12px;
     margin-bottom: 2rem;
+    align-self: center;
     object-fit: cover;
     aspect-ratio: 16 / 9;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
