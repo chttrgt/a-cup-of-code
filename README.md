@@ -1,6 +1,6 @@
 # ☕ A Cup Of Code
 
-A Cup Of Coffe, basit ama şık bir blog uygulamasıdır. Kullanıcılar yeni postlar ekleyebilir, mevcut postları silebilir veya güncelleyebilir. Uygulama, React ile geliştirilmiş olup global state yönetimi için Context API kullanılmıştır. Tasarımı ise normal CSS ile responsive şekilde hazırlanmıştır.
+A Cup Of Code, basit ama şık bir blog uygulamasıdır. Kullanıcılar yeni postlar ekleyebilir, mevcut postları silebilir veya güncelleyebilir. Uygulama, React ile geliştirilmiş olup global state yönetimi için Context API kullanılmıştır. Tasarımı ise normal CSS ile responsive şekilde hazırlanmıştır.
 
 ## 🚀 Özellikler
 
