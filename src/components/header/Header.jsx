@@ -39,7 +39,13 @@ const Header = () => {
             alt="coffe-logo-image"
             className="coffe-logo-image"
           />
-          <p className="coffe-logo-text">A Cup Of Code</p>
+          <p
+            className={`coffe-logo-text ${
+              !location.pathname.includes("blog") ? "hide-text" : ""
+            }`}
+          >
+            A Cup Of Code
+          </p>
         </Link>
       </div>
       {!location.pathname.includes("blog") && (

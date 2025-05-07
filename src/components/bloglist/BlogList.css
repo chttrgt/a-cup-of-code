@@ -7,19 +7,30 @@
   max-width: 1200px;
   min-height: 100vh;
   box-sizing: border-box;
+  place-items: center;
 }
+
+/* MEDIA QUERIES  */
 
 @media (max-width: 1199px) {
   .blog-list {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
   }
 }
+
+@media (max-width: 1163px) {
+  .blog-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 899px) {
   .blog-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 599px) {
   .blog-list {
     grid-template-columns: 1fr;

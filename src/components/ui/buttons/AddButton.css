@@ -37,6 +37,8 @@
   }
 }
 
+/* MEDIA QUERIES  */
+
 @media (max-width: 768px) {
   .add-button {
     width: 50px;

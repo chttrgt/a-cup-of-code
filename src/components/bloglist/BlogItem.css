@@ -94,3 +94,23 @@
     }
   }
 }
+
+/* MEDIA QUERIES  */
+
+@media (max-width: 1164px) {
+  .post-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  .post-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 430px) {
+  .post-card {
+    width: 100%;
+  }
+}

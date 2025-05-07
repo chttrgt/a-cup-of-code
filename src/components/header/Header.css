@@ -74,3 +74,11 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 }
+
+/* MEDIA QUERIES  */
+
+@media (max-width: 525px) {
+  .hide-text {
+    display: none;
+  }
+}

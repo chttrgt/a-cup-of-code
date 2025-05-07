@@ -141,6 +141,8 @@ button[type="button"] {
   gap: 0.5rem;
 }
 
+/* MEDIA QUERIES  */
+
 @media (max-width: 640px) {
   .adding-form {
     width: 100%;
