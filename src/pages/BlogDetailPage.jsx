@@ -7,8 +7,8 @@ const BlogDetailPage = () => {
   const { showActionForm, setShowActionForm } = useCihatForm();
   const [selectedBlog, setSelectedBlog] = useState(null);
 
-  const handleEditBlog = (blog) => {
-    setSelectedBlog(blog);
+  const handleEditBlog = (blogObj) => {
+    setSelectedBlog(blogObj);
   };
 
   return (

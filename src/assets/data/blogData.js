@@ -1,6 +1,6 @@
 const blogDatas = [
   {
-    id: 1,
+    id: "1",
     title: "How to learn React",
     description: "React is a JavaScript library for building user interfaces.",
     image:
@@ -13,7 +13,7 @@ const blogDatas = [
       "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. React allows developers to create large web applications that can change data, without reloading the page. Its key feature is the ability to build reusable UI components.",
   },
   {
-    id: 2,
+    id: "2",
     title: "Understanding JavaScript Closures",
     description: "Closures are a powerful feature of JavaScript",
     image:
@@ -26,7 +26,7 @@ const blogDatas = [
       "JavaScript closures are a fundamental concept that allows for powerful programming patterns. They enable functions to maintain access to their lexical scope even when the function is executed outside that scope.",
   },
   {
-    id: 3,
+    id: "3",
     title: "CSS Grid vs Flexbox",
     description: "A comparison of CSS Grid and Flexbox for layout design.",
     image:
@@ -39,7 +39,7 @@ const blogDatas = [
       "CSS Grid and Flexbox are two powerful layout systems in CSS. This article explores their differences and when to use each.",
   },
   {
-    id: 4,
+    id: "4",
     title: "Node.js for Beginners",
     description: "An introduction to Node.js and its ecosystem.",
     image:
@@ -53,7 +53,7 @@ const blogDatas = [
       "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to build scalable network applications.",
   },
   {
-    id: 5,
+    id: "5",
     title: "Understanding Asynchronous JavaScript",
     description: "A deep dive into callbacks, promises, and async/await.",
     image:
@@ -67,7 +67,7 @@ const blogDatas = [
       "Asynchronous JavaScript is essential for handling operations that take time to complete, such as API calls. This article covers callbacks, promises, and the async/await syntax.",
   },
   {
-    id: 6,
+    id: "6",
     title: "Building RESTful APIs with Express",
     description: "Learn how to create RESTful APIs using Express.js.",
     image:
@@ -80,7 +80,7 @@ const blogDatas = [
       "This article will guide you through the process of building RESTful APIs using Express.js, covering routing, middleware, and error handling.",
   },
   {
-    id: 7,
+    id: "7",
     title: "Introduction to TypeScript",
     description:
       "TypeScript is a superset of JavaScript that adds static typing.",
@@ -95,7 +95,7 @@ const blogDatas = [
       "TypeScript enhances JavaScript by adding static types, which can help catch errors early and improve code quality.",
   },
   {
-    id: 8,
+    id: "8",
     title: "Exploring the MERN Stack",
     description:
       "A guide to building full-stack applications with MongoDB, Express, React, and Node.js.",
@@ -110,7 +110,7 @@ const blogDatas = [
       "This article provides an overview of the MERN stack and how to build full-stack applications using MongoDB, Express, React, and Node.js.",
   },
   {
-    id: 9,
+    id: "9",
     title: "CSS Animations and Transitions",
     description:
       "Learn how to create smooth animations and transitions with CSS.",
@@ -125,7 +125,7 @@ const blogDatas = [
       "CSS animations and transitions allow you to create dynamic and engaging user experiences. This article covers the basics of implementing animations and transitions in your web projects.",
   },
   {
-    id: 10,
+    id: "10",
     title: "JavaScript ES6 Features",
     description: "Explore the new features introduced in ES6.",
     image:

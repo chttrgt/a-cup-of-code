@@ -11,7 +11,7 @@ const BlogDetail = ({ onEditBlog }) => {
   const { blogs } = useCihatBlog();
   const { bid } = useParams();
   const navigate = useNavigate();
-  const blog = blogs.find((blog) => blog.id === +bid);
+  const blog = blogs.find((blog) => blog.id === bid);
 
   if (!blog) {
     return <div className="blog-not-found">Blog post not found!</div>;

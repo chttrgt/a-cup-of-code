@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import CloseAddingFormImage from "../../../assets/images/delete.png";
 import "./ActionForm.css";
 import { useCihatBlog } from "../../../context/blog-context/BlogContext";
@@ -45,7 +46,6 @@ const ActionForm = ({ onClose, editMode = false, initialData = null }) => {
     if (editMode && initialData) {
       setFormData({
         ...initialData,
-        date: new Date(initialData?.date).toISOString().split("T")[0],
       });
     }
   }, [editMode, initialData]);
@@ -56,13 +56,12 @@ const ActionForm = ({ onClose, editMode = false, initialData = null }) => {
       const updatedBlog = {
         ...formData,
         id: initialData.id,
-        date: new Date(formData.date).toLocaleDateString("en-US"),
       };
       updateBlog(updatedBlog);
     } else {
       const newBlogPost = {
         ...formData,
-        id: blogs.length + 1,
+        id: uuidv4(),
         date: new Date(formData.date).toLocaleDateString("en-US"),
       };
 
