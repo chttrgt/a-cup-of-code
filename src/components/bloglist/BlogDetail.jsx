@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCihatForm } from "../../context/form-context/FormContext";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
@@ -13,6 +13,10 @@ const BlogDetail = ({ onEditBlog }) => {
   const { bid } = useParams();
   const navigate = useNavigate();
   const blog = blogs.find((blog) => blog.id === bid);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (!blog) {
     return <div className="blog-not-found">Blog post not found!</div>;
