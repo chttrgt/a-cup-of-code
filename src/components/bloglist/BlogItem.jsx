@@ -1,25 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useCihatBlog } from "../../context/blog-context/BlogContext";
-import DeletePostImage from "../../assets/images/bin.png";
+import ActionMenu from "../ui/menus/ActionMenu";
 import "./BlogItem.css";
+import FeedbackButton from "../ui/buttons/FeedbackButton";
 
-const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
-  const { setBlogs } = useCihatBlog();
+const BlogItem = ({
+  bid,
+  title,
+  description,
+  image,
+  author,
+  avatar,
+  date,
+  likeCount,
+  commentCount,
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(`/blog/${bid}`);
-  };
-
-  const handleDeleteBlogPost = (e) => {
-    e.stopPropagation();
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this post?"
-    );
-    if (confirmDelete) {
-      setBlogs((prev) => prev.filter((blog) => blog.id !== bid));
-    }
   };
 
   return (
@@ -27,6 +26,7 @@ const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
       <div className="post-image" style={{ backgroundImage: `url(${image})` }}>
         <div className="overlay"></div>
         <h2 className="post-title">{title}</h2>
+        <ActionMenu bid={bid} />
       </div>
       <div className="post-content">
         <p className="post-description">{description}</p>
@@ -38,14 +38,7 @@ const BlogItem = ({ bid, title, description, image, author, avatar, date }) => {
               {new Date(date).toLocaleDateString("en-US")}
             </p>
           </div>
-          <div className="delete-post" onClick={handleDeleteBlogPost}>
-            <img
-              src={DeletePostImage}
-              alt="Delete Post"
-              width={20}
-              height={20}
-            />
-          </div>
+          <FeedbackButton likeCount={likeCount} commentCount={commentCount} />
         </div>
       </div>
     </div>

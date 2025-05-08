@@ -22,6 +22,8 @@ const BlogList = () => {
           author={blog.author}
           avatar={blog.avatar}
           date={blog.date}
+          likeCount={blog.likeCount}
+          commentCount={blog.commentCount}
         />
       ))}
     </div>

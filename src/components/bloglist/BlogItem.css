@@ -10,6 +10,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: transform 0.3s ease;
   user-select: none;
+  position: relative;
 
   &:hover {
     transform: translateY(-4px);

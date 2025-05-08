@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCihatForm } from "../../context/form-context/FormContext";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
+import FeedbackButton from "../ui/buttons/FeedbackButton";
 import { TiArrowBack } from "react-icons/ti";
 import { MdModeEditOutline } from "react-icons/md";
 import "./BlogDetail.css";
@@ -33,6 +34,10 @@ const BlogDetail = ({ onEditBlog }) => {
             <p className="publish-date">
               {new Date(blog.date).toLocaleDateString("en-US")}
             </p>
+            <FeedbackButton
+              likeCount={blog.likeCount}
+              commentCount={blog.commentCount}
+            />
           </div>
         </div>
         <div className="blog-post-update">

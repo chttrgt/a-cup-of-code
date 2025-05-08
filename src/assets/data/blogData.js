@@ -11,6 +11,8 @@ const blogDatas = [
     date: "2023-10-01",
     content:
       "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. React allows developers to create large web applications that can change data, without reloading the page. Its key feature is the ability to build reusable UI components.",
+    likeCount: 35,
+    commentCount: 61545455,
   },
   {
     id: "2",
@@ -24,6 +26,8 @@ const blogDatas = [
     date: "2023-10-02",
     content:
       "JavaScript closures are a fundamental concept that allows for powerful programming patterns. They enable functions to maintain access to their lexical scope even when the function is executed outside that scope.",
+    likeCount: 15,
+    commentCount: 16,
   },
   {
     id: "3",
@@ -37,6 +41,8 @@ const blogDatas = [
     date: "2023-10-03",
     content:
       "CSS Grid and Flexbox are two powerful layout systems in CSS. This article explores their differences and when to use each.",
+    likeCount: 33,
+    commentCount: 14,
   },
   {
     id: "4",
@@ -51,6 +57,8 @@ const blogDatas = [
     date: "2023-10-04",
     content:
       "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to build scalable network applications.",
+    likeCount: 7,
+    commentCount: 1,
   },
   {
     id: "5",
@@ -65,6 +73,8 @@ const blogDatas = [
     date: "2023-10-05",
     content:
       "Asynchronous JavaScript is essential for handling operations that take time to complete, such as API calls. This article covers callbacks, promises, and the async/await syntax.",
+    likeCount: 45,
+    commentCount: 88,
   },
   {
     id: "6",
@@ -78,6 +88,8 @@ const blogDatas = [
     date: "2023-10-06",
     content:
       "This article will guide you through the process of building RESTful APIs using Express.js, covering routing, middleware, and error handling.",
+    likeCount: 15,
+    commentCount: 28,
   },
   {
     id: "7",
@@ -93,6 +105,8 @@ const blogDatas = [
     date: "2023-10-07",
     content:
       "TypeScript enhances JavaScript by adding static types, which can help catch errors early and improve code quality.",
+    likeCount: 55,
+    commentCount: 71,
   },
   {
     id: "8",
@@ -108,6 +122,8 @@ const blogDatas = [
     date: "2023-10-08",
     content:
       "This article provides an overview of the MERN stack and how to build full-stack applications using MongoDB, Express, React, and Node.js.",
+    likeCount: 5000,
+    commentCount: 100,
   },
   {
     id: "9",
@@ -123,6 +139,8 @@ const blogDatas = [
     date: "2023-10-09",
     content:
       "CSS animations and transitions allow you to create dynamic and engaging user experiences. This article covers the basics of implementing animations and transitions in your web projects.",
+    likeCount: 100,
+    commentCount: 48,
   },
   {
     id: "10",
@@ -137,6 +155,8 @@ const blogDatas = [
     date: "2023-10-10",
     content:
       "This article explores the new features introduced in ES6, including let and const, arrow functions, template literals, and more. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, aut sint nobis ipsam non ducimus at! Et molestiae assumenda aliquam unde corrupti earum minus quasi nemo sunt, ipsam non quidem deleniti, fugit optio beatae dolor labore ducimus dolore accusamus? Maxime blanditiis alias debitis, minima esse laborum cumque quod, corporis optio ducimus et similique odio inventore. Magni provident ullam repellat sequi dolor fuga accusamus, perspiciatis assumenda atque optio sit doloremque reprehenderit. Dolores impedit soluta quaerat beatae labore. Repudiandae explicabo expedita voluptatibus. Sint quam itaque quis unde, laudantium quo reiciendis hic dicta placeat est nemo possimus iure magnam porro nihil cupiditate vel?",
+    likeCount: 5,
+    commentCount: 11,
   },
 ];
 
