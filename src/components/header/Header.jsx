@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
 import SearchInput from "../ui/inputs/SearchInput";
 import SortMenu from "../ui/menus/SortMenu";
@@ -12,9 +12,11 @@ const Header = () => {
   const location = useLocation();
   const { setBlogs } = useCihatBlog();
   const [showMenu, setShowMenu] = useState(false);
+  const [, setSearchParams] = useSearchParams();
 
   const handleSearch = (e) => {
     const searchPost = e.target.value.toLowerCase();
+    setSearchParams({ page: "0" });
 
     if (searchPost === "") {
       setBlogs(blogDatas);

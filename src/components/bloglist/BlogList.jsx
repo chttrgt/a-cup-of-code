@@ -25,6 +25,14 @@ const BlogList = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  if (blogs.length === 0) {
+    return (
+      <div className="no-blogs-found">
+        <h2>Blog not found!</h2>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="blog-list">
