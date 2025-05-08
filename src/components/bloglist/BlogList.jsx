@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import { useSearchParams } from "react-router-dom";
 import BlogItem from "./BlogItem";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
 import "./BlogList.css";
@@ -7,19 +8,20 @@ import "./BlogList.css";
 const BlogList = () => {
   const { blogs } = useCihatBlog();
   const [currentItems, setCurrentItems] = useState([]);
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const itemsPerPage = 12;
 
+  const currentPage = parseInt(searchParams.get("page")) || 0;
+
   useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(blogs.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(blogs.length / itemsPerPage));
-  }, [itemOffset, blogs]);
+    const endOffset = (currentPage + 1) * itemsPerPage;
+    const startOffset = currentPage * itemsPerPage;
+    setCurrentItems(blogs.slice(startOffset, endOffset));
+  }, [currentPage, blogs]);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % blogs.length;
-    setItemOffset(newOffset);
+    setSearchParams({ page: event.selected.toString() });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -50,7 +52,7 @@ const BlogList = () => {
         nextLabel="Next >"
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
-        pageCount={pageCount}
+        pageCount={Math.ceil(blogs.length / itemsPerPage)}
         previousLabel="< Previous"
         renderOnZeroPageCount={null}
         containerClassName="pagination"
@@ -58,6 +60,7 @@ const BlogList = () => {
         previousLinkClassName="page-num"
         nextLinkClassName="page-num"
         activeLinkClassName="active"
+        forcePage={currentPage}
       />
     </>
   );
