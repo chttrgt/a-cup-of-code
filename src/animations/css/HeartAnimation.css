@@ -1,0 +1,50 @@
+.heart-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 60px;
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: #ff3040;
+    color: #ff3040;
+    filter: drop-shadow(0 0 10px rgba(255, 48, 64, 0.5));
+    background: none;
+  }
+}
+
+.heart-animation.active {
+  animation: heart 1.2s cubic-bezier(0.17, 0.89, 0.32, 1.49) forwards;
+  background: transparent;
+}
+
+/* EFFETCS */
+
+@keyframes heart {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5) rotate(10deg);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9) translateY(-20px);
+  }
+}

@@ -1,18 +1,21 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCihatForm } from "../../context/form-context/FormContext";
 import { useCihatBlog } from "../../context/blog-context/BlogContext";
 import FeedbackButton from "../ui/buttons/FeedbackButton";
+import HeartAnimation from "../../animations/components/HeartAnimation";
 import { TiArrowBack } from "react-icons/ti";
 import { MdModeEditOutline } from "react-icons/md";
 import "./BlogDetail.css";
 
 const BlogDetail = ({ onEditBlog }) => {
-  const { setShowActionForm } = useCihatForm();
-  const { blogs } = useCihatBlog();
   const { bid } = useParams();
-  const navigate = useNavigate();
+  const { blogs } = useCihatBlog();
   const blog = blogs.find((blog) => blog.id === bid);
+  const [showHeart, setShowHeart] = useState();
+  const [likesCount, setLikesCount] = useState(blog.likeCount);
+  const { setShowActionForm } = useCihatForm();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -27,6 +30,14 @@ const BlogDetail = ({ onEditBlog }) => {
     setShowActionForm(true);
   };
 
+  const handleLike = () => {
+    setShowHeart(true);
+    setLikesCount((prevCount) => prevCount + 1);
+    setTimeout(() => {
+      setShowHeart(false);
+    }, 300);
+  };
+
   return (
     <div className="blog-detail-container">
       <div className="blog-detail-header">
@@ -39,8 +50,9 @@ const BlogDetail = ({ onEditBlog }) => {
               {new Date(blog.date).toLocaleDateString("en-US")}
             </p>
             <FeedbackButton
-              likeCount={blog.likeCount}
+              likeCount={likesCount}
               commentCount={blog.commentCount}
+              onLikeClick={handleLike}
             />
           </div>
         </div>
@@ -59,6 +71,7 @@ const BlogDetail = ({ onEditBlog }) => {
       </div>
 
       <div className="blog-detail-content">
+        <HeartAnimation showHeart={showHeart} />
         <img src={blog.image} alt={blog.title} className="blog-detail-image" />
         <p className="blog-description">{blog.description}</p>
         <div className="blog-content">{blog.content}</div>
